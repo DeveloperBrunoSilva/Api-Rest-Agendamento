@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.NotNull;
 
 import com.agendamento.enums.Situation;
 
@@ -18,10 +19,13 @@ public class History {
 	private Long id;
 
 	@OneToOne
+	@NotNull
 	private Commitment commitment;
 
+	@NotNull
 	private Situation situation;
 
+	@NotNull
 	private LocalDateTime date;
 
 	public Long getId() {
